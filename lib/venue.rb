@@ -14,9 +14,11 @@ class Venue
   end
 
   def yell_at_patrons
-    @patrons.map do |patron|
-      patron.upcase
+    patrons_upcased = []
+    @patrons.each do |patron|
+      patrons_upcased << patron.upcase
     end
+    patrons_upcased
   end
 
   def over_capacity?
