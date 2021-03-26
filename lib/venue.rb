@@ -14,16 +14,13 @@ class Venue
   end
 
   def yell_at_patrons
-    patrons_upcased = []
-    @patrons.each do |patron|
-      patrons_upcased << patron.upcase
+    @patrons.map do |patron|
+      patron.upcase
     end
-    patrons_upcased
   end
 
   def over_capacity?
-    return false if @patrons.count <= 4
-      true
+    @patrons.count > @capacity
   end
 
   def kick_out
